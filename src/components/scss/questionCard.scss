@@ -1,0 +1,26 @@
+.question-card-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 16px;
+    text-align: left;
+
+    .question-card-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .question-card-title-left {}
+
+        .question-card-title-right {}
+    }
+
+    .question-card-button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .question-card-button-left {}
+
+        .question-card-button-right {}
+    }
+}

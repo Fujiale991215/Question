@@ -1,0 +1,31 @@
+.layers-wrapper {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .06);
+    display: flex;
+
+    .layers-title {
+        flex: auto;
+        line-height: 2;
+    }
+
+    .layers-selected {
+        color: #1890ff;
+    }
+
+    .layers-handler {
+        width: 50px;
+        text-align: end;
+
+        .layers-btn {
+            opacity: .2;
+        }
+    }
+
+    &:hover {
+        .layers-handler {
+            .layers-btn {
+                opacity: 1;
+            }
+        }
+    }
+}

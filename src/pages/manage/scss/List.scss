@@ -1,0 +1,19 @@
+.list-header {
+    display: flex;
+    margin-bottom: 20px;
+
+    .list-header-left {
+        flex: 1;
+    }
+}
+
+.list-content {
+    margin-bottom: 20px;
+    height: calc(100vh - 300px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.list-footer {
+    text-align: center;
+}

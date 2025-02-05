@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel to JSON</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+
+<body>
+    <input type="file" id="upload" />
+    <pre id="result"></pre>
+    <script> document.getElementById('upload').addEventListener('change', handleFile, false);
+        function handleFile(e) {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const data = new Uint8Array(event.target.result); // 使用 XLSX 对象读取数据 
+                const workbook = XLSX.read(data, { type: 'array' }); // 获取第一个工作表 
+                const firstSheetName = workbook.SheetNames[0]; const worksheet = workbook.Sheets[firstSheetName]; // 将工作表转换为 JSON 
+                const jsonData = XLSX.utils.sheet_to_json(worksheet); // 显示结果 
+                document.getElementById('result').textContent = JSON.stringify(jsonData, null, 2);
+                // 创建一个 Blob 对象  
+                const blob = new Blob([JSON.stringify(jsonData, null, 4)], { type: 'application/json' });
+                console.log(blob, 'bolb');
+                // 创建一个 URL  
+                const url = URL.createObjectURL(blob);
+                // 创建一个下载链接  
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'data.json';  // 指定下载的文件名  
+                document.body.appendChild(a);  // 将链接添加到文档中  
+                a.click();  // 触发点击进行下载  
+                document.body.removeChild(a);  // 下载后移除链接  
+                URL.revokeObjectURL(url);
+            };
+            reader.readAsArrayBuffer(file);
+        } 
+    </script>
+</body>
+
+</html>

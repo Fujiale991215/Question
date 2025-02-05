@@ -1,0 +1,14 @@
+.sug-wrapper {
+    background: linear-gradient(to right, #8cc8eb, #5fb7e0, #2f99c0);
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    padding: 24px 12px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sug-textarea {
+    width: 60%;
+}

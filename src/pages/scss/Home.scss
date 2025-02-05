@@ -1,0 +1,18 @@
+.home-Container {
+    color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 93px - 45px);
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    .info {
+        text-align: center;
+
+        button {
+            color: aqua;
+            height:60px;
+            font-size: 24px;
+        }
+    }
+}

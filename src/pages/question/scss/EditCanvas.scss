@@ -1,0 +1,29 @@
+.edit-canvas {
+    min-height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.edit-canvas-content {
+    margin: 12px;
+    border: 1px solid #fff;
+    padding: 12px;
+    border-radius: 3px;
+
+    &:hover {
+        border-color: #d9d9d9;
+    }
+}
+
+.edit-canvas-component {
+    pointer-events: none;
+}
+
+.edit-canvas-selected {
+    border-color: #1890ff !important;
+}
+
+.edit-canvas-lock {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
